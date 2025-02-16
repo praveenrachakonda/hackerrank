@@ -1,0 +1,12 @@
+console.log('Min SUm - Max Sum - version 2')
+let arr = [7,69,2,221,8974]
+let er = arr.sort((a,b) => a-b)
+console.log('er ' +er)
+
+let minSum = er.slice(0,4).reduce((acc,num) => acc+ num,0)
+let maxSum = er.slice(1).reduce((acc,num) => acc+ num,0) 
+
+//console.log(er.slice(0,4).reduce((acc,num) => acc+ num,0))
+//console.log(er.slice(1).reduce((acc,num) => acc+ num,0))
+
+console.log(minSum, maxSum);
