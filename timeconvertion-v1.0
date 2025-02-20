@@ -1,0 +1,24 @@
+// Write your code here
+    let yearSplit = s.split(":")[0];
+    let pmSplit = s.split(":")[2].slice(2,4)
+    console.log(pmSplit);
+    if(pmSplit === 'PM'){
+        if(yearSplit === '12') {
+            console.log(s.substr(0,8));
+            return s.substr(0,8);
+        } else {
+            let hour = Number(yearSplit) + 12
+            return s.replace(yearSplit, hour).slice(0,8)
+            }
+    } else if(pmSplit === 'AM' ){
+        if(yearSplit === '12') {
+            console.log(s.substr(0,8));
+            return s.substr(0,8);
+        } else {
+            let hour = Number(yearSplit) + 12
+            console.log('hour ' + hour )
+            console.log('dd '+s.replace(yearSplit, hour).slice(0,8))
+            return s.replace(yearSplit, hour).slice(0,8)
+        }
+    }
+}
