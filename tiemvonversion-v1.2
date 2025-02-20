@@ -1,0 +1,18 @@
+function timeConversion(s) {
+    let hours = parseInt(s.split(":")[0]); // Extract hour part as a number
+    let minutesSeconds = s.slice(2, 8); // Extract ":mm:ss" part
+    let period = s.slice(-2); // Extract AM/PM
+
+    if (period === "PM") {
+        if (hours !== 12) {
+            hours += 12; // Convert PM hours (except 12PM)
+        }
+    } else if (period === "AM") {
+        if (hours === 12) {
+            hours = 0; // Convert 12AM to 00
+        }
+    }
+
+    // Format hour as two digits and return final result
+    return `${hours.toString().padStart(2, "0")}${minutesSeconds}`;
+}
