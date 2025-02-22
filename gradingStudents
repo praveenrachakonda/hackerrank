@@ -1,0 +1,23 @@
+*
+ * Complete the 'gradingStudents' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY grades as parameter.
+ */
+
+function gradingStudents(grades) {
+    // Write your code here
+    //console.log('gg '+ grades)
+    let resultGrades = []
+    for(let grade in grades){
+        let nearCeil = Math.ceil(grades[grade]/5)*5
+        console.log(grades[grade])
+        if(grades[grade] < 38){
+            continue
+        }
+        if(nearCeil - grades[grade] < 3){
+            grades[grade] = nearCeil
+        } 
+    }
+    return grades;
+}
